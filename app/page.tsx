@@ -1,65 +1,91 @@
-import Image from "next/image";
+"use client"
+import  Contacto  from "@/components/Contacto"
+import BlurText from "@/components/BlurText"
+import Frase from "@/components/ui/Frase"
+import dynamic from "next/dynamic"
+import RotatingText from "@/components/RotatingText"
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+const Esquema = dynamic(() => import("@/components/Esquema"),{
+})
+const Services = dynamic(() => import("@/components/Services"),{
+})
+export default function MyApp() {
+  return(
+    
+    <main className=" min-h-screen w-full overflow-x-hidden">
+      {/*Header*/}
+      <section className="h-full mt-[10%] max-w-6xl mx-auto mb-10 grid grid-cols-2">
+        <div className="flex flex-col mr-auto ">
+        <BlurText 
+          className="text-BLACK text-3xl md:text-8xl mb-7"
+          text="Creemos juntos tu presencia en el mundo digital."
+          delay={250}
+          animateBy="words"
+          direction="top"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <button className="flex bg-[#233AC6] w-35 text-center mt-3 text-white animate-bounce text-2xl rounded-lg p-3  hover:bg-[#1E1E1E] hover:text-white">
+          Contáctame
+        </button>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="space-y-20 flex flex-col  items-center justify-center bg-blue-200">
+          <RotatingText 
+           texts={["PAGÍNAS WEB", "SOFTWARE", "DISEÑO", "E-COMMERCE", "SEGURIDAD", "IA", "ADMIN"]}
+           loop={true}
+           rotationInterval={3000}
+           mainClassName="bg-black text-white p-3 text-3xl max-w-sm shadow-2xl"
+           />
+           <RotatingText 
+           texts={["PAGÍNAS WEB", "SOFTWARE", "DISEÑO", "E-COMMERCE", "SEGURIDAD", "INTELIGENCIA ARTIFICIAL", "ADMIN"]}
+           loop={true}
+           rotationInterval={3000}
+           mainClassName="bg-black text-white p-3 text-3xl"
+           />
+           <RotatingText 
+           texts={["PAGÍNAS WEB", "SOFTWARE", "DISEÑO", "E-COMMERCE", "SEGURIDAD", "IA", "ADMIN"]}
+           loop={true}
+           rotationInterval={3000}
+           mainClassName="bg-blue-700 text-white p-3 text-3xl"
+           />
         </div>
-      </main>
-    </div>
-  );
+      </section>
+      {/*Frase*/}
+      <section className="bg-gradient-to-b from-white to-[#233AC6] flex flex-col">
+        <div className="min-h-[70vh] max-w-6xl  px-3 mt-4 flex mx-auto items-center justify-center">
+          <Frase/>
+        </div>
+      </section>
+      {/*Cómo trabajo*/}
+      <section className="min-h-screen bg-white">
+        <div className="flex flex-col mx-auto text-center mt-20">
+          <h1 className="text-4xl md:text-5xl text-[#233AC6] hover:text-gray-300 mb-7">¿Cómo trabajo?</h1>
+        </div>
+        <Esquema/>
+      </section>
+
+      {/*Lo que puedes tener*/}
+      <section className="bg-black min-h-screen pt-20">
+        <div className="">
+          <Services/>
+        </div>
+      </section>
+       {/*Contacto*/}
+       <section className=" h-auto mx-auto bg-black pt-20">
+        <h1 className="text-4xl md:text-5xl text-white hover:text-gray-300 mb-7 text-center">
+          Dejame un mensaje y te contestaré al instante
+        </h1>
+        <div className="max-w-5xl flex flex-col mx-auto text-white">
+        <Contacto/>
+        </div>
+        <h1 className="text-zinc-300 animate-bounce text-3xl flex flex-col mx-auto mt-16 text-center">¿Necesitas hablar conmigo?</h1>
+        <h1 className="text-zinc-200 text-xl text-center">¡Tengamos una reunión!</h1>
+        <a href={"https://calendly.com"} className="mx-auto bg-zinc-300 hover:bg-zinc-400 flex flex-col text-center w-50 p-3 rounded-lg mt-3">
+          Agenda tu reunión
+        </a>
+      </section>
+      <section className="bg-black h-50 w-full">
+
+      </section>
+    </main>
+  )
+
 }
