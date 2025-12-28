@@ -1,28 +1,50 @@
 "use client"
+import { useEffect, useRef } from "react";
 import { useTransitionRouter } from "next-transition-router"
+import gsap from "gsap";
 
 export default function Navbar(){
     const router = useTransitionRouter();
+    const navbarRef = useRef(null);
+
+    useEffect(() => {
+        gsap.from(".menu-item", {
+            y:-100,
+            ease: "power3.out",
+            duration:1, 
+            scale:.6, //tamaño en el que empieza
+            stagger:.2 //delay entre elementos
+        })
+    },[])
+
+    
     
     return(
-        <nav className="fixed bg-transparent border-3 border-black p-4 h-20 mt-2 items-center space-x-20 flex flex-row ml-10  mx-auto ">
-            <div className="pr-8 mr-8 border-r border-black">
+        <nav className="fixed z-50 w-full px-5 flex flex-row  h-20 bg-[#0e100f] border-b border-blue-200 items-center space-x-10">
+            <div className="pr-8 mr-8 cursor-pointer ">
             <button onClick={() => router.push("/")}>
-                <p className="text-black hover:text-[#] text-2xl font-bold">
-                 Inicio
+                <p className="text-gray-200 menu-item cursor-pointer hover:text-white text-2xl font-bold">
+                 Delaika
                 </p>
             </button>
             </div>
-            <div className="pr-8 mr-8 border-r border-black">
+            <div className="cursor-pointer  pr-8 mr-8">
+            <button onClick={() => router.push("/")}>
+            <p className="text-gray-200 menu-item cursor-pointer hover:text-white text-2xl font-bold">
+                 Contacto
+                </p>
+            </button>
+            </div>
+            <div className="pr-8 mr-8  cursor-pointer ">
             <button onClick={() => router.push("/about")}>
-                <p className="text-black hover:text-[#03e29d] text-2xl font-bold">
+            <p className="text-gray-200 menu-item cursor-pointer hover:text-white text-2xl font-bold">
                  Mi trabajo
                 </p>
             </button>
             </div>
-            <div >
+            <div className="cursor-pointer">
             <button onClick={() => router.push("/")}>
-                <p className="text-black hover:text-[#3f22ec] text-2xl font-bold">
+            <p className="text-gray-200 menu-item cursor-pointer hover:text-white text-2xl font-bold">
                  Contacto
                 </p>
             </button>

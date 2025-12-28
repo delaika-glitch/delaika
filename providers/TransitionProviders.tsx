@@ -45,15 +45,7 @@ export default function TransitionProviders({ children }: { children: ReactNode}
         window.addEventListener("resize", createTransitionGrid);
 
         // TEMPORAL: Para ver los bloques inmediatamente (quitar después)
-    setTimeout(() => {
-        if (blockRef.current.length > 0) {
-            gsap.to(blockRef.current, {
-                opacity: 0.5,
-                duration: 1,
-                stagger: 0.01
-            });
-        }
-    }, 1000);
+
         return () => window.removeEventListener("resize", createTransitionGrid);
     }, []); 
 

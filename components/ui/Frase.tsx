@@ -4,14 +4,14 @@ import DecryptedText from "../DecryptedText"
 export default function Frase(){
     return(
         <DecryptedText
-          text="Hoy en día, tener presencia digital es esencial. No basta con existir en el mundo físico; tu proyecto o negocio también debe ser visible en el mundo digital. Mi objetivo es ayudarte a construir una presencia online fuerte, coherente y efectiva, para que conectes con tu audiencia y aproveches al máximo las oportunidades de este mundo digital."
+          text="Una presencia digital sólida permite que tu marca exista, conecte y crezca donde realmente están las personas. Genera confianza, aumenta la visibilidad y convierte el interés inicial en relaciones duraderas, para que puedas centrarte en lo importante mientras tu identidad digital trabaja por ti."
           speed={30}
           maxIterations={10}
           sequential={true}
           revealDirection="start"
-          className="text-white text-md md:text-3xl "
+          className="text-[#fffce1] text-md md:text-4xl "
           characters=".;"
-          encryptedClassName="text-white text-md md:text-3xl"
+          encryptedClassName="text-[#fffce1] text-md md:text-4xl"
           animateOn="view"
           />
     )

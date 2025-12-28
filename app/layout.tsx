@@ -1,14 +1,29 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Elms_Sans, Chewy } from "next/font/google";
+import { Geist, Geist_Mono, Elms_Sans, Chewy, Noto_Serif_Kannada} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar"
 import Ribbons from "@/components/Ribbons";
 import TransitionProviders from "@/providers/TransitionProviders";
+import Footer from "@/components/footer/Footer";
 
 
-const chewy =Chewy({
+const geist = Geist({
+  weight: "400",
+  variable: "--font-geist"
+})
+
+const noto = Noto_Serif_Kannada({
+  weight: "400",
+  variable: "--font-noto"
+})
+
+const chewy = Chewy({
   weight: "400",
   variable: "--font-chewy"
+})
+const elms = Elms_Sans({
+  weight: "400",
+  variable: "--font-elms"
 })
 
 
@@ -32,6 +47,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         </TransitionProviders>
+        <Footer/>
       </body>
     </html>
   );
