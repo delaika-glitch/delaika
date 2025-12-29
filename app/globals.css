@@ -2,12 +2,14 @@
 @import "tw-animate-css";
 
 :root{
-  --m-negro: #0e100f;
-  --m-blanco:#fffce1;
+  --delaika-black: #0e100f;
+  --delaika-text:#FFC880 ;
+  --delaika-purple:#5A189A ;
+  --delaika-purple-dark:#3C096C ;
 }
 
 body {
-  font-family: var(--font-chewy), sans-serif;
+  font-family: var(--font-hanken), sans-serif;
   font-weight: 300;
   font-stretch:extra-expanded;
 }
@@ -40,7 +42,7 @@ body {
 
 .transition-block{
   position: absolute;
-  background-color: rgb(136, 80, 80);
+  background-color: rgb(70, 12, 92);
   opacity: 0;
 }
 

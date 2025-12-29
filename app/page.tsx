@@ -11,7 +11,7 @@ import SplitType from "split-type"
 import { types } from "node:util"
 import { plane } from "three/examples/jsm/Addons.js"
 import RotatingHero from "@/components/home/RotatingHero"
-
+import Image from "next/image"
 
 const Esquema = dynamic(() => import("@/components/Esquema"), {
 })
@@ -40,8 +40,7 @@ export default function MyApp() {
   useEffect(() => {
     gsap.from(".square-item", {
       x: 900,
-      y: -100,
-      background: "",
+      background: "white",
       rotate: 180,
       duration: 4,
       stagger: 1
@@ -66,7 +65,7 @@ export default function MyApp() {
       opacity: 0,
       stagger: 0.1,
       duration: 1,
-      color: "blue",
+      color: "#5A189A",
       ease: "power3.out",
     })
 
@@ -76,19 +75,26 @@ export default function MyApp() {
   }, [])
 
   return (
-    <main className=" bg-[var(--m-negro)]  w-full overflow-x-hidden">
+    <main className=" bg-[var(--delaika-black)]  w-full overflow-x-hidden">
       {/*Header*/}
-      <section className="h-full  md:min-h-screen bg-[var(--m-negro)] mt-[10%] flex flex-col items-center justify-center mx-auto">
-        <div className=" items-center ">
-          <div className="h-5 w-5  bg-white rounded-full square-item"></div>
-          <div className="h-4 w-4 mt-2 bg-blue-600 rounded-full square-item"></div>
-          <div className="h-3 w-3 mt-2 bg-red-600 rounded-full square-item"></div>
-          <p className="text-xl md:text-[12rem] text-[var(--m-blanco)] font-bold hero-text">Presencia <br></br> <span className="text-xl md:text-[12rem] text-[var(--m-blanco)] font-bold hero-text"> digital</span></p>
+      <section className="h-full  md:min-h-screen bg-[var(--delaika-black)] w-full  flex flex-col items-center ">
+        <div className=" mt-[8%]">
+          <p className="text-xl  md:text-[12rem]  text-[var(--delaika-text)] font-bold hero-text">Presencia Digital </p>
+          <Image 
+             src="/delaika_logo.png"
+             alt="pqnq"
+             width={300}
+             height={300}
+             className="mx-auto">
+            </Image>
+          <div className="h-5 w-5  bg-[#FFC880] shadow-2xl shadow-purple-100  square-item"></div>
+          <div className="h-4 w-4 mt-4 bg-[#FFC880]  square-item"></div>
+          <div className="h-3 w-3 mt-4 bg-purple-300  square-item"></div>
         </div>
         <div className="mx-auto">
 
-          <button className="bg-blue-500 button hover:bg-blue-600 border-2 h-20 border-white text-white flex flex-col p-4 rounded-2xl items-center">
-            <p className="text-2xl">Contáctanos</p>
+          <button className="bg-[var(--delaika-purple)] cursor-pointer button hover:bg-purple-800 shadow-md shadow-purple-200 border-2 h-17 border-black text-white flex flex-col p-4  items-center">
+            <p className="text-2xl text-white">Contáctanos</p>
           </button>
         </div>
         <div className="max-w-7xl h-0.5 bg-gray-500 w-1000 flex mx-auto mb-20 mt-30"></div>
@@ -109,17 +115,11 @@ export default function MyApp() {
         <div className="max-w-7xl h-0.5 bg-gray-500 w-1000 flex mx-auto mb-20 mt-30"></div>
       </section>
       {/*Cómo trabajo*/}
-      <section className="min-h-screen bg-[var(--m-negro)]">
-        <div className="flex flex-col  mt-20">
-          <h1 className="text-8xl md:text-6xl text-white mx-auto hover:text-gray-300 mb-1">¿Cómo trabajamos?</h1>
-        </div>
-        <Esquema />
-        <div className="max-w-7xl h-0.5 bg-gray-500 w-1000 flex mx-auto mb-20 mt-30"></div>
-      </section>
+
       
 
       {/*Lo que puedes tener*/}
-      <section className="bg-gradient-to-b from-[var(--m-negro)] to-blue-800 min-h-screen pt-20">
+      <section className="bg-gradient-to-b from-[var(--delaika-black)] to-blue-800 min-h-screen pt-20">
         <div className="">
           <Services />
         </div>

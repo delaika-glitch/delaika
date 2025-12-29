@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Elms_Sans, Chewy, Noto_Serif_Kannada} from "next/font/google";
+import { Geist, Geist_Mono, Elms_Sans, Chewy, Noto_Serif_Kannada, Hanken_Grotesk} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar"
 import Ribbons from "@/components/Ribbons";
@@ -26,6 +26,12 @@ const elms = Elms_Sans({
   variable: "--font-elms"
 })
 
+const hanken = Hanken_Grotesk({
+  weight: "400",
+  variable: "--font-hanken"
+}
+)
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -40,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${chewy.variable}  antialiased`}
+        className={`${hanken.variable}  antialiased`}
         
       >
         <TransitionProviders>
