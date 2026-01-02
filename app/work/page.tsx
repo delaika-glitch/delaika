@@ -1,32 +1,51 @@
 "use client"
 import Esquema from "@/components/Esquema"
 import Image from "next/image"
-import { useEffect } from "react"
+import { useLayoutEffect, useRef } from "react"
 import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+import Link from "next/link"
+import { useGSAP } from "@gsap/react"
+
+if (typeof window !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger)
+  }
 export default function Work(){
-    useEffect(() => {
-        gsap.from(".title",{
-            x:-900,
-            duration:1,
-            opacity:.3,
-            ease: "power4.in"
-        })
-    }, [])
+  const container = useRef(null);
+    
+  useGSAP(() => {
+    const ctx = gsap.context(() => {
+      gsap.to("#square-white", {
+        x: window.innerWidth - 200,
+        rotate: 360,
+        scrollTrigger: {
+          trigger: "#work-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.5,
+        },
+      });
+    }, container);
+    return () => ctx.revert();
+  }, []);
+  
+
     return(
-        <section className="min-h-screen bg-[var(--delaika-black)]">
+        <section ref={container} className="min-h-screen bg-(--bg) px-10">
         <div className="flex flex-col mx-auto">
-           
-          <h1 className="text-8xl md:text-3xl rounded-xl bg-purple-400 p-5 mt-[10%] text-black title mx-auto font-bold mb-1">¿CÓMO LOGRAMOS TU PRODUCTO DIGITAL?</h1>
-          <Image 
-             src="/delaika_logo.png"
-             alt="pqnq"
-             width={400}
-             height={400}
-             className="mx-auto">
-            </Image>
+          <h1 id="work-title" className="text-9xl tracking-[-0.1rem] md:text-9xl rounded-xl bg-(--bg2) p-5 mt-[10%] text-gray-200 mx-auto font-bold mb-1 uppercase">
+            Un proceso claro. Resultados reales.
+          </h1>
         </div>
-        <Esquema />
-        <div className="max-w-7xl h-0.5 bg-gray-500 w-1000 flex mx-auto  mt-30"></div>
+        <div id="square-white" className="h-10 rounded-full w-10 bg-gradient-to-r from-white to-(--accent) mt-5"> </div>
+        <div id="header2" className="mt-19">
+           <Esquema/>
+        </div>
+        <Link href={"/contacto"} className="flex flex-col mx-auto mt-[10%]">
+        <button className="bg-gradient-to-r from-(--accent) to-white w-70 mx-auto mb-[10%] cursor-pointer button hover:bg-green-600  border-2 h-17 border-gray-200 text-white rounded-[8px] flex flex-col p-4  items-center">
+            <p className="text-2xl text-black font-bold ">ME INTERESA</p>
+          </button>
+        </Link>
       </section>
     )
 }

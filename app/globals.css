@@ -2,17 +2,25 @@
 @import "tw-animate-css";
 
 :root{
-  --delaika-black: #0e100f;
-  --delaika-text:#FFC880 ;
-  --delaika-purple:#5A189A ;
-  --delaika-purple-dark:#3C096C ;
+  --bg: #0E0E10; /*fondo principal*/
+  --bg2: #1C1C22;  /*fondo secundario*/
+  --text: #FFFFFF;  /*texto principal*/
+  --text2: #E6E6EB;  /*texto secundario*/
+  --labels: #8E8E99;  /*labels*/
+  --accent: #2EFF7A;  /* acento */
 }
 
-body {
-  font-family: var(--font-hanken), sans-serif;
-  font-weight: 300;
-  font-stretch:extra-expanded;
-}
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/Satoshi-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'Satoshi', sans-serif;
+  }
+
 
 .section{
   position: relative;
@@ -42,7 +50,7 @@ body {
 
 .transition-block{
   position: absolute;
-  background-color: rgb(70, 12, 92);
+  background-color: #2EFF7A;
   opacity: 0;
 }
 
@@ -50,7 +58,7 @@ body {
   position: relative;
   width: 100%;
   height: 100svh;
-  background-color: #000000;
+  background-color: #030b02;
 }
 
 .slider{

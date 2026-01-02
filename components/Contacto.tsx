@@ -5,9 +5,9 @@ import { Input } from "./ui/input"
 export default function Contacto(){
     return(
     <main>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-black/30 p-3 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-(--bg) h-full p-3 w-full">
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 mt-[10%]">
                 <p className="text-white text-2xl">Nombre</p>
                 <Input type="text" placeholder="Nombre"/>
             </div>

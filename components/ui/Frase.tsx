@@ -9,9 +9,9 @@ export default function Frase(){
           maxIterations={10}
           sequential={true}
           revealDirection="start"
-          className="text-[#FFC880] text-md md:text-4xl "
-          characters=".;"
-          encryptedClassName="text-[#FFC880] text-md md:text-4xl"
+          className="text-white text-md justify-center md:text-xl uppercase"
+          characters=".:"
+          encryptedClassName="text-white text-md text-center md:text-xl"
           animateOn="view"
           />
     )

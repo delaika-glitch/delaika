@@ -1,6 +1,214 @@
-export default function About(){
-    return(
-        <>
-        </>
+"use client"
+import { useEffect } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger)
+
+export default function About() {
+    const timeline = gsap.timeline({
+        yoyo: true,
+        repeat: -1,
+        repeatDelay: 1
+    })
+    useGSAP(() => {
+        timeline.to("#square", {
+            rotate: 360,
+            stagger: .5,
+            borderRadius: "50%"
+        })
+
+    }, [])
+
+    useGSAP(() => {
+        if (typeof window === 'undefined') return;
+        gsap.from(".es", {
+            scrollTrigger: {
+                trigger: ".es",
+                start: "top 70%",
+                end: "top 15%",
+                scrub: 1.5
+            },
+            stagger: {
+                amount: 1
+
+            },
+            y: 300,
+            opacity: 0,
+            ease: "power4.out",
+        })
+    }, [])
+
+    useGSAP(() => {
+        gsap.to("#white", {
+            scrollTrigger: {
+                trigger: "#white",
+                start: "top 65%",
+                scrub: 1.5
+            },
+            stagger: {
+                amount: 0.1
+            },
+            x: -600,
+            backgroundColor: "white"
+        })
+    })
+
+    useGSAP(() => {
+        gsap.from(".filo-text", {
+            scrollTrigger: {
+                trigger: ".filo-text",
+                start: "top 100%",
+                end: "bottom 20%",
+                scrub: true
+            },
+            stagger: {
+                amount: 1
+            },
+            y: 100,
+            ease: "power2.inOut",
+            opacity: 0
+        })
+    })
+
+    useGSAP(() => {
+        gsap.to(".sound-text", {
+            x: () => gsap.utils.random(-1.5, 1.5),
+            y: () => gsap.utils.random(-1.5, 1.5),
+            duration: 5,
+            ease: "power1.inOut",
+            repeat: -1,
+            repeatDelay: 0.6
+        })
+    })
+
+    useGSAP(() => {
+        gsap.from(".more-text", {
+            scrollTrigger: {
+                trigger: ".sound-text",
+                start: "top 105%",
+                scrub: 1.5
+            },
+            opacity: 0,
+            y: 200
+
+        })
+    })
+
+    useGSAP(() => {
+        gsap.to(".square-stagger", {
+            y: 200,
+            opacity: 0,
+            ease: "power2.out",
+            rotate: 360,
+            borderRadius: "100",
+            stagger: {
+                amount: 1
+            },
+            scrollTrigger: {
+                trigger: ".square-stagger",
+                start: "top 95%",
+                scrub: 1.3
+            }
+        })
+    })
+
+    useGSAP(() => {
+        gsap.to(".square-stagger1", {
+            x: -400,
+            opacity: 0,
+            ease: "power2.out",
+            rotate: 360,
+            borderRadius: "100",
+            stagger: {
+                amount: 1
+            },
+            scrollTrigger: {
+                trigger: ".square-stagger1",
+                start: "top 105%",
+                scrub: 1.3
+            }
+        })
+    })
+
+    return (
+        <main className="bg-(--bg) h-[1000vh] pt-20 pb-20">
+            <div className="px-15">
+                <h1 className="text-7xl text-(--text) mt-20 uppercase font-bold">Delaika nace de una idea simple</h1>
+            </div>
+            <div className="flex mt-20">
+                <div id="square" className="h-40 w-40 bg-gradient-to-t from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
+                <div id="square" className="h-40 w-40 bg-gradient-to-b from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
+                <div id="square" className="h-40 w-40 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
+                <div id="square" className="h-40 w-40 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
+                <div id="square" className="h-40 w-40 bg-gradient-to-t from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
+            </div>
+            <div>
+                <p className="text-3xl w-[50%] font-bold text-(--text2) mt-[10%] px-20 uppercase">Las buenas páginas web no nacen solo de código ni de plantillas. Nacen de decisiones de diseño bien pensadas y de una experiencia cuidada en cada detalle.</p>
+            </div>
+            <div id="white" className="h-5 mt-10 w-full bg-(--bg2) rounded-xl mx-auto"></div>
+            <div className="ml-[50%]">
+                <p className="text-3xl w-full font-bold text-(--text2) mt-[10%] mb-[10%] px-20 uppercase">En Delaika diseñamos sitios web para marcas que entienden que su presencia digital es parte de su identidad y no algo que se pueda dejar al azar.</p>
+            </div>
+            <div id="white" className="h-5 mt-10 w-full bg-(--text2) rounded-xl mx-auto"></div>
+            <div className="mt-[10%] mb-[10%]">
+                <div className="flex flex-col mx-auto text-center space-y-[8%]">
+                    <p className="rounded-full bg-gradient-to-b from-white to-(--accent) h-10 w-30 es mx-auto"></p>
+                    <p className="uppercase es text-(--text2) font-bold text-5xl">
+                        Es una experiencia
+                    </p>
+                    <p className="rounded-full bg-gradient-to-b from-white to-(--accent) h-10 w-180 es mx-auto"></p>
+                    <p className="uppercase es text-(--text2) text-5xl font-bold">
+                        Es una extensión de una marca
+                    </p>
+                    <p className="rounded-full bg-gradient-to-b from-white to-(--accent) h-10 w-300 es mx-auto"></p>
+                    <p className="uppercase es text-(--text2) font-bold justify-center text-5xl">
+                        Debe comunicar con claridad desde el primer segundo
+                    </p>
+                    <p className="rounded-full bg-gradient-to-b from-white to-(--accent) h-10 w-400 es mx-auto"></p>
+                </div>
+            </div>
+            {/*filosofia*/}
+            <div className="flex flex-col text-center">
+                <div className="flex">
+                    <h1 className="text-center text-(--text) filo-text ml-10 font-bold text-8xl mb-[10%] ml tracking-[1.2rem]">NUESTRA <br></br> FILOSOFÍA</h1>
+                    <div className="h-60 w-10 bg-gradient-to-b from-gray-200 to-w mx-auto items-center"></div>
+                </div>
+                <div className="mx-auto filo-text">
+                    <p className=" text-white  text-5xl  uppercase font-bold">La simplicidad no es ausencia de trabajo</p>
+                    <p className="text-white font-bold text-5xl uppercase mb-20">Es el resultado de hacerlo <span className="text-(--accent) uppercase font-bold text-5xl"> bien</span> </p>
+                    <p className="text-white text-3xl uppercase font-bold mb-20">Menos ruido.</p>
+                    <p className="text-white text-center text-3xl uppercase font-bold mb-20 ">Más intención.</p>
+                    <p className="text-white text-3xl uppercase font-bold mb-20">Más criterio</p>
+                </div>
+                <div className="max-w-7xl  flex gap-3 mx-auto">
+                    <div className="h-20 square-stagger w-20 rounded-[8px] bg-gradient-to-b from-(--accent) to-white"></div>
+                    <div className="h-20 square-stagger w-20 rounded-[8px] bg-gradient-to-b rounded-[8px]  from-(--accent) to-white"></div>
+                    <div className="h-20 square-stagger w-20 rounded-[8px] bg-gradient-to-b rounded-[8px]  from-(--accent) to-white"></div>
+                    <div className="h-20 square-stagger w-20 rounded-[8px] bg-gradient-to-b rounded-[8px]  from-(--accent) to-white"></div>
+                </div>
+            </div>
+            {/*propósito*/}
+            <div className="px-[10%]">
+                <div className="flex ">
+                    <h1 className="text-center text-(--text) filo-text ml-10 font-bold text-8xl mb-[10%] ml tracking-[1.2rem] uppercase">Propósito</h1>
+                   
+                </div>
+                <div className="mx-auto filo-text">
+                    <p className=" text-white  text-5xl  uppercase font-bold">Acompañar a las marcas en su crecimiento digital.</p>
+                    <p className="text-white mt-20 font-bold text-5xl uppercase mb-20">Trabajamos con empresas que entienden que su web
+                    no es solo un canal, sino una herramienta estratégica.</p>
+                    
+                </div>
+                <div className="max-w-7xl  flex gap-3 mx-auto">
+                    <div className="h-20 square-stagger1 w-20 rounded-[8px] bg-gradient-to-b from-(--accent) to-white"></div>
+                    <div className="h-20 square-stagger1 w-20 rounded-[8px] bg-gradient-to-b rounded-[8px]  from-(--accent) to-white"></div>
+                    <div className="h-20 square-stagger1 w-20 rounded-[8px] bg-gradient-to-b rounded-[8px]  from-(--accent) to-white"></div>
+                    <div className="h-20 square-stagger1 w-20 rounded-[8px] bg-gradient-to-b rounded-[8px]  from-(--accent) to-white"></div>
+                </div>
+
+            </div>
+        </main>
     )
 }
