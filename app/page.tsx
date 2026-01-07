@@ -106,7 +106,7 @@ export default function MyApp() {
       </section>
       {/*Frase*/}
       <section className=" flex flex-col md:mt-[20%] md:mt-1 " >
-      <div className="flex mt-15 mb-15 ">
+      <div className="block md:hidden flex mt-15 mb-15 ">
                 <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-t from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
                 <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-b from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
                 <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
