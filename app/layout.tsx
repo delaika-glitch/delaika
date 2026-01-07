@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/Navbar"
 import Ribbons from "@/components/Ribbons";
 import TransitionProviders from "@/providers/TransitionProviders";
 import Footer from "@/components/footer/Footer";
+import { FORMERR } from "dns";
 
 
 const geist = Geist({
@@ -50,7 +51,9 @@ export default function RootLayout({
       >
         <TransitionProviders>
         <Navbar />
+
         {children}
+        <Footer/>
         </TransitionProviders>
       </body>
     </html>
