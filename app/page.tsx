@@ -8,6 +8,7 @@ import RotatingHero from "@/components/home/RotatingHero"
 import HomeHero from "@/components/home/HomeHero"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
+import Link from "next/link"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -48,14 +49,14 @@ export default function MyApp() {
   }, [])
 
   useGSAP(() => {
-    gsap.to("#bg-transition", {
+    gsap.from("#bg-transition", {
       scrollTrigger: {
         trigger: "#bg-transition",
         start: "top 75%",
         end: "top 20%",
         scrub: true
       },
-      backgroundColor: "white",
+      backgroundColor: "#0E0E10",
     })
   })
 
@@ -94,68 +95,59 @@ export default function MyApp() {
   }
 )
 
-
-
-
-
   return (
-    <main className=" bg-(--bg) w-full overflow-x-hidden">
+    <main className="px-6 bg-(--bg) w-full overflow-x-hidden">
       {/*Header*/}
       <section>
         <HomeHero />
       </section>
       {/*Frase*/}
-      <section className=" flex flex-col md:mt-[20%] md:mt-1 " >
-      <div className="block md:hidden flex mt-15 mb-15 ">
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-t from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-b from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-t from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
-            </div>
+      <section className=" flex flex-col md:mt-[0%] md:mt-1 " >
         <div className="h-full md:h-[50vh] mt-2 max-w-6xl px-3  flex mx-auto items-center justify-center">
           <Frase />
         </div>
       </section>
       {/*SERVICIOS*/}
-      <section className="flex flex-col md:mb-20 mt-[5%]  pl-4">
+      <section className="flex flex-col md:mb-20 mt-[20%] md:mt-0  pl-4">
         <RotatingHero />
       </section>
       {/*Confianza*/}
-      <section id="bg-transition" className="md:p-0 p-20 md:h-[60vh] bg-(--bg) px-15 flex items-center">
+      <section id="bg-transition" className="md:p-0 p-20 md:h-[60vh] bg-(--text) mt-[10%]  px-15 flex items-center">
         <div className="flex mx-auto flex-col ">
           <div className="w-full h-2 bg-black mb-3 confidence-line"></div>
           <div className="w-full h-2 bg-black mb-3 confidence-line"></div>
           <div className="w-full h-2 bg-black mb-3 confidence-line"></div>
           <div className="w-full h-2 bg-black mb-3 confidence-line"></div>
-          <h1 id="text-transition" className="text-6xl text-black font-bold justify-center">
+          <h1 id="text-transition" className="text-xl sm:text-2xl md:text-6xl text-center text-black font-bold justify-center">
             Nosotros no hacemos únicamente páginas, hacemos una experiencia digital para tus clientes
           </h1>
 
         </div>
       </section>
       {/*Confianza*/}
-      <section id="" className="md:p-0  md:h-full  bg-white px-15 flex ">
-        <div className="flex mx-auto flex-col space-y-20">
-          <h1 className="text-5xl text-white font-bold p-3 queremos-bg rounded-xl bg-black mx-auto">QUEREMOS QUE TE VEAN</h1>
-          <h1 className="text-5xl text-white font-bold p-3 queremos-bg rounded-xl bg-orange-600 mx-auto">QUEREMOS QUE TE SIENTAN</h1>
-          <h1 className="text-5xl text-white font-bold p-3 queremos-bg rounded-xl bg-red-600 mx-auto">QUEREMOS QUE LES GUSTES</h1>
-          <h1 className="text-5xl text-white font-bold p-3 queremos-bg rounded-xl bg-purple-600 mx-auto">QUEREMOS QUE TE PREFIERAN</h1>
-          <h1 className="text-5xl text-white font-bold p-3 queremos-bg rounded-xl bg-green-600 mx-auto mb-20">QUEREMOS QUE TE PRESUMAN</h1>          
+      <section id="" className="md:p-0  md:h-full  bg-(--bg) px-15 flex ">
+        <div className="flex mx-auto flex-col space-y-20 mt-13">
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto">QUEREMOS QUE TE VEAN</h1>
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto">QUEREMOS QUE TE SIENTAN</h1>
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto">QUEREMOS QUE LES GUSTES</h1>
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto">QUEREMOS QUE TE PREFIERAN</h1>
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto mb-20">QUEREMOS QUE TE PRESUMAN</h1>          
         </div>
       </section>
       <section >
-        <div id="green-box" className="hidden md:block mt-20 w-20 h-20 bg-gradient-to-r from-(--accent) to-white"></div>
+        <div id="green-box" className="hidden md:block  w-20 h-20 bg-gradient-to-r from-(--accent) to-white"></div>
       </section>
-      <section className=" h-full mb-7 mx-auto bg-(--bg) p-20">
-        <h1 className="text-2xl md:text-4xl md:text-5xl text-white hover:text-gray-300 mb-7 text-center uppercase">
-          Somos tu copiloto tecnológico
+      <section className=" h-full md:h-[50vh] mb-7 mx-auto bg-(--bg) ">
+        <h1 className="text-2xl md:text-4xl font-bold md:text-5xl text-(--text) hover:text-gray-300 mb-7 text-center uppercase">
+          PERMITENOS LLEVARTE <br></br> AL SIGUIENTE NIVEL
         </h1>
-        <h1 className="text-zinc-300 animate-bounce text-xl md:text-3xl flex flex-col mx-auto mt-16 text-center">¿Necesitas hablar con nosotros?</h1>
-        <h1 className="text-zinc-200 text-xl text-center">¡Tengamos una reunión!</h1>
-        <a href={"https://calendly.com"} className="mx-auto bg-zinc-300 hover:bg-zinc-400 flex flex-col text-center w-50 p-3 rounded-lg mt-3">
-          Agenda tu reunión
-        </a>
+        <h1 className="text-(--text) font-bold animate-bounce text-xl md:text-3xl flex flex-col mx-auto mt-16 text-center">¿Necesitas hablar con nosotros?</h1>
+        <h1 className="text-(--text) font-bold text-center md:text-xl mb-8 mt-8">¡Tengamos una reunión!</h1>
+        <Link href={"/contacto"}>
+          <button className="bg-transparent mx-auto cursor-pointer hover:bg-(--text) border-(--text)  border-2 md:h-17 text-(--text) hover:text-black rounded-[20px] flex flex-col p-4  items-center">
+            <p className="md:text-2xl  font-bold ">HABLA CON NOSTROS</p>
+          </button>
+          </Link>
       </section>
     </main>
   )

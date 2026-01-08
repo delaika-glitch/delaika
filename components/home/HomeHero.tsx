@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import SplitType from "split-type"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
+import Link from "next/link"
 
 export default function HomeHero(){
     useGSAP(() => {
@@ -55,11 +56,9 @@ export default function HomeHero(){
           rotate:360,
           duration: 5,
           ease: "power2.out",
-          scale:2
+          scale:1
         })
       },[])
-
-    
 
       useGSAP(() => {
         gsap.from("#hero-company", {
@@ -73,8 +72,21 @@ export default function HomeHero(){
         })
 
       },[])
+
+      useGSAP(() => {
+        gsap.to("#mobile-square", {
+          x: window.innerWidth - 100,
+          repeat: -1,
+          yoyo: true,
+          duration:5,
+          rotate:360,
+          repeatDelay:2
+        })
+      })
+      
+
     return(
-        <section className="h-full text-center h-full md:h-full mt-[20%] md:mt-1 w-full  flex flex-col space-y-10">
+        <section className="h-full text-center h-full md:h-full mt-[14%] mb-[4%] md:mb-0 md:mt-1 w-full  flex flex-col space-y-10">
           <div id="hero-squares" className="hidden md:flex mt-[10%] mx-auto flex gap-5 px-4">
             <div className="w-20 h-20 bg-gradient-to-r from-(--accent) to-white rounded-xl"></div>
             <div className="w-20 h-20 bg-gradient-to-l from-(--accent) to-white rounded-xl"></div>
@@ -85,19 +97,22 @@ export default function HomeHero(){
             <div className="w-20 h-20 bg-gradient-to-r from-(--accent) to-white rounded-xl"></div>
           </div>
         <div className="relative mx-auto text-center px-4">
-          <p className="text-4xl  md:text-[94px] text-(--text) font-bold  md:cking-[.5rem]">Websites profesionales para negocios que quieren crecer.</p>
+          <p className="text-6xl mt-[30%] md:mt-0 mb-10 md:mb-20 md:mb-0 md:text-[94px] text-[#fffce1] font-bold  md:cking-[.5rem]">Websites profesionales para negocios que quieren crecer.</p>
         </div>
-        <div className="mx-auto px-3 flex button mb-[20px] gap-3 items-center">
-          <button className="bg-gradient-to-r from-(--accent) to-white hover:bg-black  cursor-pointer button hover:bg-green-600  border-2 md:h-17 border-gray-200 text-white rounded-[8px] flex flex-col p-4  items-center">
-            <p className="md:text-2xl text-black font-bold ">QUIERO MI PÁGINA</p>
+        <div className="mx-auto px-3 flex mb-[20px] gap-3 items-center">
+          <Link href={"/contacto"}>
+          <button className="bg-transparent  cursor-pointer hover:bg-(--text) border-(--text)  border-2 md:h-17 text-(--text) hover:text-black rounded-[20px] flex flex-col p-4  items-center">
+            <p className="md:text-2xl  font-bold ">HABLA CON NOSTROS</p>
           </button>
-          <button className="bg-transparent cursor-pointer button hover:bg-black hover:text-black  border-2 md:h-17 border-gray-200 text-white rounded-[8px] flex flex-col p-4  items-center">
-            <p className="md:text-2xl text-white font-bold ">HABLA CON NOSOTROS</p>
-          </button>
+          </Link>
+          
         </div>
-        <div id="hero-company" className="hidden md:block text-white text-9xl mb-10 mt-[2%] font-bold  mx-auto text-center w-full">
+        <div id="hero-company" className="hidden md:block text-(--text) text-9xl mb-10 mt-[2%] font-bold  mx-auto text-center w-full">
           <span className="inline-block">D  E  L  A   I   K  A</span>
         </div>
+        <div className="block md:hidden flex mt-15 mb-15 ">
+                <div id="mobile-square" className="h-20 w-20 md:h-40 md:w-40 bg-gradient-to-t from-(--accent) to-[#fffce1] rounded-xl "></div>
+            </div>
       </section>
     )
 }

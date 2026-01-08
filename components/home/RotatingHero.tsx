@@ -49,40 +49,40 @@ export default function RotatingHero(){
     })
 
     return(
-        <div className="mx-auto px-10 grid md:grid-cols-3  items-center">
-        <div  id="moon" className=" flex flex-col gap-10">
-        <div className="hidden md:block h-40 w-40 rounded-2xl bg-gradient-to-t from-white to-(--accent)"></div>
-        <div className="hidden md:block h-40 w-40  rounded-2xl bg-gradient-to-t from-blue-600 to-(--accent)"></div>
-        <div className="hidden md:block h-40 w-40  rounded-2xl bg-gradient-to-b from-yellow-200 to-(--acent)"></div>
+        <div className="mx-auto px-10 grid md:grid-cols-3 text-center items-center">
+        <div  id="moon" className=" flex flex-col gap-10 ">
+        <div className="hidden md:block h-20 w-35 justify-right rounded-2xl bg-gradient-to-t from-(--text) to-black)"></div>
+        <div className="hidden md:block h-20 w-35 rounded-2xl justify-right bg-gradient-to-t from-(--text) to-black)"></div>
+        <div className="hidden md:block h-20 w-35 rounded-2xl bg-gradient-to-t from-(--text) to-black)"></div>
         </div>
         
-        <div className="space-y-10 bg-(--bg2) w-full rounded-[8px] max-w-xl px-6 border-2 border-black text-left  flex flex-col p-5 scroll">
-          <p className="scroll font-bold text-(--text)  text-5xl p-3 h-10 bg-black  flex items-center text-center">
+        <div className="space-y-10 bg-(--bg2) w-full rounded-[8px] max-w-xl px-6 border-2 border-black text-center  flex flex-col p-5 scroll">
+          <p className="scroll font-bold text-(--text) text-5xl p-3 h-10 bg-black  flex items-center text-center">
             SERVICIOS
           </p>
-          <p className="scroll  text-md md:text-xl text-white font-bold">
+          <p className="scroll bg-black  text-md md:text-xl text-(--text) font-bold">
             PÁGINAS WEB
           </p>
-          <p className="scroll  text-md md:text-xl font-bold text-white">
+          <p className="scroll bg-black  text-md md:text-xl font-bold text-(--text)">
             DESARROLLO DE SOFTWARE
           </p>
-          <p className="scroll  text-md md:text-xl font-bold text-white">
+          <p className="scroll bg-black  text-md md:text-xl font-bold text-(--text)">
             BACKEND
           </p>
-          <p className="scroll  text-md md:text-xl font-bold text-white">
+          <p className="scroll bg-black  text-md md:text-xl font-bold text-(--text)">
             INTELIGENCIA ARTIFICIAL
           </p>
-          <p className="scroll  text-md md:text-xl font-bold text-white">
+          <p className="scroll bg-black  text-md md:text-xl font-bold text-(--text)">
             MANTENIMIENTO
           </p>
-          <p className="scroll  text-md md:text-xl font-bold text-white">
+          <p className="scroll bg-black  text-md md:text-xl font-bold text-(--text)">
             SEGURIDAD DIGITAL
           </p>
         </div>
         <div id="moon" className="ml-auto flex flex-col gap-10">
-        <div className="hidden md:block h-40 w-40 rounded-2xl bg-gradient-to-l from-white to-(--accent)"></div>
-        <div className="hidden md:block h-40 w-40  rounded-2xl bg-gradient-to-t from-blue-600 to-(--accent)"></div>
-        <div className="hidden md:block h-40 w-40  rounded-2xl bg-gradient-to-b from-red-200 to-(--acent)"></div>
+        <div className="hidden md:block h-20 w-35 rounded-2xl bg-gradient-to-t from-(--text) to-black"></div>
+        <div className="hidden md:block h-20 w-35  rounded-2xl bg-gradient-to-t from-(--text) to-black)"></div>
+        <div className="hidden md:block h-20 w-35  rounded-2xl bg-gradient-to-t from-(--text) to-black)"></div>
 
         </div>
         </div>

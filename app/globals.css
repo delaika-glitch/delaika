@@ -4,7 +4,7 @@
 :root{
   --bg: #0E0E10; /*fondo principal*/
   --bg2: #1C1C22;  /*fondo secundario*/
-  --text: #FFFFFF;  /*texto principal*/
+  --text: #fffce1;  /*texto principal*/
   --text2: #E6E6EB;  /*texto secundario*/
   --labels: #8E8E99;  /*labels*/
   --accent: #2EFF7A;  /* acento */
