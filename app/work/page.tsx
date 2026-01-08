@@ -28,7 +28,7 @@ export default function Work(){
 
     return(
         <section ref={container} className="min-h-screen bg-(--bg) px-10 overflow-x-hidden">
-        <div className="flex flex-col mx-auto">
+        <div className="mt-10 flex flex-col mx-auto">
           <h1 id="work-title" className="text-4xl md:text-9xl tracking-[-0.1rem] md:text-9xl rounded-xl bg-(--bg2) p-5 mt-[20%] md:mt-[10%] text-(--text) mx-auto font-bold mb-1 uppercase">
             Un proceso claro. Resultados reales.
           </h1>

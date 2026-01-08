@@ -96,14 +96,14 @@ export default function MyApp() {
 )
 
   return (
-    <main className="px-6 bg-(--bg) w-full overflow-x-hidden">
+    <main className="flex flex-col mx-auto bg-(--bg) w-full overflow-x-hidden">
       {/*Header*/}
       <section>
         <HomeHero />
       </section>
       {/*Frase*/}
       <section className=" flex flex-col md:mt-[0%] md:mt-1 " >
-        <div className="h-full md:h-[50vh] mt-2 max-w-6xl px-3  flex mx-auto items-center justify-center">
+        <div className="h-[30vh] md:h-[50vh] mt-2 max-w-6xl px-6  flex mx-auto items-center justify-center">
           <Frase />
         </div>
       </section>
@@ -127,11 +127,11 @@ export default function MyApp() {
       {/*Confianza*/}
       <section id="" className="md:p-0  md:h-full  bg-(--bg) px-15 flex ">
         <div className="flex mx-auto flex-col space-y-20 mt-13">
-          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto">QUEREMOS QUE TE VEAN</h1>
-          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto">QUEREMOS QUE TE SIENTAN</h1>
-          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto">QUEREMOS QUE LES GUSTES</h1>
-          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto">QUEREMOS QUE TE PREFIERAN</h1>
-          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg rounded-xl bg-(--text) mx-auto mb-20">QUEREMOS QUE TE PRESUMAN</h1>          
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg  bg-(--text) mx-auto">QUEREMOS QUE TE VEAN</h1>
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg  bg-(--text) mx-auto">QUEREMOS QUE TE SIENTAN</h1>
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg  bg-(--text) mx-auto">QUEREMOS QUE LES GUSTES</h1>
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg  bg-(--text) mx-auto">QUEREMOS QUE TE PREFIERAN</h1>
+          <h1 className="text-md sm:text-3xl md:text-5xl text-black font-bold p-3 queremos-bg  bg-(--text) mx-auto mb-20">QUEREMOS QUE TE PRESUMAN</h1>          
         </div>
       </section>
       <section >

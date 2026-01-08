@@ -15,13 +15,13 @@ export default function Con(){
                 <Link href={"/"} >
                 <div className="bg-(--bg2) h-full flex flex-col p-20 text-center">
                  <Send className="font-bold text-(--text) w-20 h-20 mx-auto"/>
-                 <h1 className="font-bold text-(--text) font-bold text-4xl mx-auto my-auto">ENVIAR UN MENSAJE</h1>
+                 <h1 className="font-bold text-(--text) font-bold text-xl md:text-4xl mx-auto my-auto">ENVIAR UN MENSAJE</h1>
                 </div>
                 </Link>
                 <Link href={""}>
                 <div className="bg-(--bg2) h-full flex flex-col mx-auto p-20 text-center">
                  <User className="font-bold text-(--text) w-20 h-20 mx-auto my-auto "/>
-                 <h1 className="font-bold text-(--text) font-bold text-4xl mx-auto my-auto">PROGRAMAR UNA REUNIÓN</h1>
+                 <h1 className="font-bold text-(--text) font-bold text-xl md:text-4xl mx-auto my-auto">PROGRAMAR UNA REUNIÓN</h1>
                 </div>
                 </Link>
                 {/* <div className="bg-(--bg2) h-full flex flex-col mx-auto">
