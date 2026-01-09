@@ -8,31 +8,6 @@ import Footer from "@/components/footer/Footer";
 import { FORMERR } from "dns";
 
 
-const geist = Geist({
-  weight: "400",
-  variable: "--font-geist"
-})
-
-const noto = Noto_Serif_Kannada({
-  weight: "400",
-  variable: "--font-noto"
-})
-
-const chewy = Chewy({
-  weight: "400",
-  variable: "--font-chewy"
-})
-const elms = Elms_Sans({
-  weight: "400",
-  variable: "--font-elms"
-})
-
-const hanken = Hanken_Grotesk({
-  weight: "400",
-  variable: "--font-hanken"
-}
-)
-
 
 
 export const metadata: Metadata = {
