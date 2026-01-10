@@ -1,5 +1,5 @@
 "use client"
-import { Cpu, Send, User } from "lucide-react"
+import { Cpu, Send, User, PhoneCall} from "lucide-react"
 import Link from "next/link"
 
 export default function Con(){
@@ -12,6 +12,12 @@ export default function Con(){
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 px-5 mx-auto font-bold text-(--text)">
+            <Link href={"/contacto/chatbot"}>
+                <div className="bg-(--bg2) h-full p-20 w-full flex flex-col mx-auto text-center">
+                 <Cpu className="text-(--text) w-20 h-20 mx-auto my-auto"/>
+                 <h1 className="text-(--text) font-bold text-xl md:text-4xl mx-auto my-auto">ASISTENTE VIRTUAL</h1>
+                </div>
+                </Link>
                 <Link href={"/contacto/mensajes"} >
                 <div className="bg-(--bg2) h-full flex flex-col p-20 text-center">
                  <Send className="font-bold text-(--text) w-20 h-20 mx-auto"/>
@@ -24,11 +30,13 @@ export default function Con(){
                  <h1 className="font-bold text-(--text) font-bold text-xl md:text-4xl mx-auto my-auto">PROGRAMAR UNA REUNIÓN</h1>
                 </div>
                 </Link>
-                {/* <div className="bg-(--bg2) h-full flex flex-col mx-auto">
-                 <Cpu className="text-white w-20 h-20 mx-auto my-auto"/>
-                 <h1 className="text-white font-bold text-4xl mx-auto my-auto">DELAIKA.IA</h1>
+                <Link href={""}>
+                <div className="bg-(--bg2) h-full p-20 w-full flex flex-col mx-auto">
+                 <PhoneCall className="text-(--text) w-20 h-20 mx-auto my-auto"/>
+                 <h1 className="text-(--text) font-bold text-xl md:text-4xl mx-auto my-auto">+52 722 427 8825</h1>
+                 <h1 className="text-(--text) font-bold text-sm md:text-lg mx-auto my-auto">(SOLO WHATS APP)</h1>
                 </div>
-                 */}
+                </Link>
             </div>
         </main>
     )
