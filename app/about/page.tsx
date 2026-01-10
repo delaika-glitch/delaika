@@ -8,6 +8,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -143,11 +144,11 @@ export default function About() {
                 <h1 className="text-3xl md:text-7xl text-(--text) tracking-[0.3rem] mt-20 uppercase font-extrabold">Delaika nace de una idea simple</h1>
             </div>
             <div className="flex mt-20">
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-t from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-b from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
-                <div id="square" className="h-10 w-10 md:h-40 md:w-40 bg-gradient-to-t from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
+                <Image src="/ddelaika.png" alt="" width={250} height={250}></Image>
+                <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-b from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
+                <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
+                <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
+                <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-t from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
             </div>
             <div>
                 <p className="md:text-3xl md:w-[50%] font-extrabold text-(--text) mt-[10%] px-20 uppercase">Las buenas páginas web no nacen solo de código ni de plantillas. Nacen de decisiones de diseño bien pensadas y de una experiencia cuidada en cada detalle.</p>
