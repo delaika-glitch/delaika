@@ -3,6 +3,7 @@ import SplitType from "split-type"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function HomeHero(){
     useGSAP(() => {
@@ -87,7 +88,8 @@ export default function HomeHero(){
 
     return(
         <section className="h-full text-center h-full md:h-full mt-[14%] mb-[4%] md:mb-0 md:mt-1 w-full  flex flex-col space-y-10">
-          <div id="hero-squares" className="hidden md:flex mt-[10%] mx-auto flex gap-5 px-4">
+ 
+          <div id="hero-squares" className="hidden md:flex mt-[10%]  mx-auto flex gap-5 px-4">
             <div className="w-20 h-20 bg-gradient-to-r from-(--accent) to-white rounded-xl"></div>
             <div className="w-20 h-20 bg-gradient-to-l from-(--accent) to-white rounded-xl"></div>
             <div className="w-20 h-20 bg-gradient-to-t from-(--accent) to-white rounded-xl"></div>
