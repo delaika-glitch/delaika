@@ -20,20 +20,41 @@ export default function Mensajes(){
       mensaje: formData.get('mensaje'),
     }
 
+    // 1. Guardar en Supabase
     const { error } = await supabase
       .from('mensajes') 
       .insert([datos])
 
-    setLoading(false)
-
     if (error) {
       alert('Error al enviar: ' + error.message)
-    } else {
-      alert('¡Mensaje enviado correctamente!')
-      form.reset();
+      setLoading(false)
+      return
     }
-  }
 
+    // 2. Avisar a n8n (Solo si Supabase salió bien)
+    try {
+      const response = await fetch('/api/n8n-webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'formulario_contacto', 
+          ...datos 
+        })
+      });
+      
+      if (response.ok) {
+        console.log("✅ Aviso de formulario enviado a n8n");
+      } else {
+        console.error("❌ Error en respuesta de n8n");
+      }
+    } catch (e) {
+      console.error("❌ Error enviando a n8n:", e);
+    }
+
+    alert('¡Mensaje enviado correctamente!')
+    form.reset();
+    setLoading(false)
+  }
   return(
     <main className="h-full bg-(--bg)">
       <div className="h-full w-full max-w-2xl mt-20 md:mt-0 mx-auto rounded-2xl shadow-lg p-8">
