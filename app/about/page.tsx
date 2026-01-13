@@ -144,7 +144,7 @@ export default function About() {
                 <h1 className="text-3xl md:text-7xl text-(--text) tracking-[0.3rem] mt-20 uppercase font-extrabold">Delaika nace de una idea simple</h1>
             </div>
             <div className="flex mt-20">
-                <Image src="/ddelaika.png" alt="" width={250} height={250}></Image>
+            <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-b from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
                 <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-b from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
                 <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
                 <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
