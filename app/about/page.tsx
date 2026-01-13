@@ -32,7 +32,7 @@ export default function About() {
         gsap.from(".es", {
             scrollTrigger: {
                 trigger: ".es",
-                start: "top 70%",
+                start: "top 85%",
                 end: "top 15%",
                 scrub: 1.5
             },
@@ -150,7 +150,7 @@ export default function About() {
                 <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-r from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
                 <div id="square" className="h-10 w-10 md:h-30 md:w-30 bg-gradient-to-t from-(--accent) to-gray-200 rounded-xl mx-auto"></div>
             </div>
-            <div>
+            <div className="md:flex">
                 <p className="md:text-3xl md:w-[50%] font-extrabold text-(--text) mt-[10%] px-20 uppercase">Las buenas páginas web no nacen solo de código ni de plantillas. Nacen de decisiones de diseño bien pensadas y de una experiencia cuidada en cada detalle.</p>
             </div>
             <div className="h-5 lines mt-10 w-full bg-(--bg) rounded-xl mx-auto"></div>
