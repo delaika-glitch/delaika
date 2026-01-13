@@ -9,6 +9,7 @@ import HomeHero from "@/components/home/HomeHero"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import Link from "next/link"
+import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -102,9 +103,10 @@ export default function MyApp() {
         <HomeHero />
       </section>
       {/*Frase*/}
-      <section className=" flex flex-col md:mt-[0%] md:mt-1 " >
-        <div className="h-[30vh] md:h-[50vh] mt-2 max-w-6xl px-6  flex mx-auto items-center justify-center">
-          <Frase />
+      <section className=" flex flex-col md:mt-[10%] md:mt-1 " >
+        <div className="h-[30vh] md:h-full mt-2 max-w-6xl px-6  flex mx-auto items-center justify-center">
+          {/* <Frase /> */}
+          <Image src="/Title.png" alt="" width={500} height={500}></Image>
         </div>
       </section>
       {/*SERVICIOS*/}
